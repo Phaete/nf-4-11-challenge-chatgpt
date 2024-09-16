@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class IngredientController {
 
+    private final IngredientService ingredientService;
+
     @PostMapping
     String categorizeIngredient(@RequestBody String ingredient) {
-
-        // TODO: This should return "vegan", "vegetarian" or "regular" depending on the ingredient.
-
-        return "vegan";
+        return ingredientService.categorizeIngredient(ingredient);
     }
 
 }
